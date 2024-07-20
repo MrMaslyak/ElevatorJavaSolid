@@ -35,18 +35,11 @@ public class ElevatorUI extends JFrame implements ElevatorUIInterface {
         setSize(600, 800);
         setLocationRelativeTo(null);
         setLayout(null);
-
-
         ui();
-
-
         floorPositions = new int[]{floorY5, floorY4, floorY3, floorY2, floorY1};
-
-
         painterFloor = new PainterFloor(this);
         painterFloor.setBounds(0, -25, 600, 800);
         add(painterFloor);
-
         setVisible(true);
     }
 
