@@ -1,8 +1,13 @@
+package UiTHred;
+
+import ElementsClass.ArrowPanel;
+import ElementsClass.ToggleSwitch;
 import javax.swing.*;
 import java.awt.*;
 import java.util.Map;
+import sounds.*;
 
-class ElevatorMoverThread extends Thread {
+public class ElevatorMoverThread extends Thread {
     private ElevatorUI elevatorUI;
     private int targetFloor, speedForElevator;
     private int[] floorPositions;
@@ -13,7 +18,7 @@ class ElevatorMoverThread extends Thread {
     private ArrowPanel arrowPanelUp, arrowPanelDown;
     private ElevatorSound elevatorSound;
 
-    public ElevatorMoverThread(ElevatorUI elevatorUI,ArrowPanel arrowPanelUp, ArrowPanel arrowPanelDown, int targetFloor, int speedForElevator, int[] floorPositions, Map<Integer, JButton> floorButtons, Map<Integer, JButton> floorOnButtons, ToggleSwitch isServiceToggle, boolean isService, Map<Integer, JButton> buttonForSpeedElevator) {
+    public ElevatorMoverThread(ElevatorUI elevatorUI, ArrowPanel arrowPanelUp, ArrowPanel arrowPanelDown, int targetFloor, int speedForElevator, int[] floorPositions, Map<Integer, JButton> floorButtons, Map<Integer, JButton> floorOnButtons, ToggleSwitch isServiceToggle, boolean isService, Map<Integer, JButton> buttonForSpeedElevator) {
         this.elevatorUI = elevatorUI;
         this.targetFloor = targetFloor;
         this.speedForElevator = speedForElevator;
@@ -63,7 +68,6 @@ class ElevatorMoverThread extends Thread {
                 elevatorSound.playSound("src/sounds/floor" + i + ".wav");
             }
         }
-
     }
 
     private void moveToFirstFloor() {
