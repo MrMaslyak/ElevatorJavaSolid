@@ -8,13 +8,14 @@ import createrClassButtons.MakeButtonOnFloor;
 import createrClassButtons.MakeFloor;
 import createrClassButtons.ActionListenerButtons;
 import Interface.ElevatorUIInterface;
+import Interface.IUi;
 
 import javax.swing.*;
 import java.awt.*;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ElevatorUI extends JFrame implements ElevatorUIInterface {
+public class ElevatorUI extends JFrame implements ElevatorUIInterface, IUi {
     private int positionX = 0, positionY, floorY5 = 400, floorY4 = 475, floorY3 = 550, floorY2 = 625, floorY1 = 700;
     private JLabel liveFloor;
     private int liveFloorInt = 1, speedForElevator;
@@ -35,7 +36,7 @@ public class ElevatorUI extends JFrame implements ElevatorUIInterface {
         setSize(600, 800);
         setLocationRelativeTo(null);
         setLayout(null);
-        ui();
+        showMenu();
         floorPositions = new int[]{floorY5, floorY4, floorY3, floorY2, floorY1};
         painterFloor = new PainterFloor(this);
         painterFloor.setBounds(0, -25, 600, 800);
@@ -43,7 +44,7 @@ public class ElevatorUI extends JFrame implements ElevatorUIInterface {
         setVisible(true);
     }
 
-    public void ui() {
+    public void showMenu() {
         JLabel label = new JLabel("Elevator Simulator");
         label.setBounds(185, 25, 300, 25);
         label.setFont(new Font("Arial", Font.BOLD, 30));
