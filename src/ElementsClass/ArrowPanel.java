@@ -3,8 +3,9 @@ package ElementsClass;
 import javax.swing.*;
 import java.awt.*;
 import Interface.Arrow;
+import Interface.DrawArrow;
 
-public class ArrowPanel extends JPanel implements Arrow {
+public class ArrowPanel extends JPanel implements Arrow, DrawArrow {
     private boolean pointingUp;
     private Color arrowColor = Color.BLACK;
 

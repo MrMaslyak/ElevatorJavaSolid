@@ -1,11 +1,12 @@
 package ElementsClass;
 
+import Interface.DrawNew;
 import UiTHred.ElevatorUI;
 import Interface.PaintFloor;
 import javax.swing.*;
 import java.awt.*;
 
-public class PainterFloor extends JPanel implements PaintFloor {
+public class PainterFloor extends JPanel implements PaintFloor, DrawNew {
     private int positionX = 0, positionY, floorY5 = 400, floorY4 = 475, floorY3 = 550, floorY2 = 625, floorY1 = 700;
     private ElevatorUI elevatorUI;
 
@@ -36,7 +37,7 @@ public class PainterFloor extends JPanel implements PaintFloor {
     }
 
     @Override
-    public void paintFloor() {
+    public void drawNewSmt() {
         repaint();
     }
 

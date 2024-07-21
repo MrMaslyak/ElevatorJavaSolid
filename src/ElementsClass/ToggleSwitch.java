@@ -4,9 +4,11 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import Interface.DrawNew;
 import Interface.Toggle;
 
-public class ToggleSwitch extends JToggleButton implements Toggle {
+public class ToggleSwitch extends JToggleButton implements Toggle, DrawNew {
 
     private static final int BUTTON_WIDTH = 25;
     private static final int BUTTON_HEIGHT = 15;
@@ -44,14 +46,14 @@ public class ToggleSwitch extends JToggleButton implements Toggle {
     }
 
     @Override
-    public void drawElement() {
+    public void toggleOn() {
+        setSelected(true);
+        setBackground(isSelected() ? new Color(0, 150, 0) : new Color(150, 150, 150));
         repaint();
     }
 
     @Override
-    public void toggleOn() {
-        setSelected(true);
-        setBackground(isSelected() ? new Color(0, 150, 0) : new Color(150, 150, 150));
+    public void drawNewSmt() {
         repaint();
     }
 }
