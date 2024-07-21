@@ -43,7 +43,7 @@ public class ElevatorUI extends JFrame implements ElevatorUIInterface {
         setVisible(true);
     }
 
-    private void ui() {
+    public void ui() {
         JLabel label = new JLabel("Elevator Simulator");
         label.setBounds(185, 25, 300, 25);
         label.setFont(new Font("Arial", Font.BOLD, 30));

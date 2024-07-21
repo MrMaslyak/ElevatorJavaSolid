@@ -2,12 +2,13 @@ package createrClassButtons;
 
 import javax.swing.*;
 import java.awt.*;
+
 import UiTHred.ElevatorUI;
 
 public class ButtonForSpeed extends JButton {
     private JButton button;
-private ActionListenerButtons actionListenerButtons;
-private ElevatorUI ui;
+    private ActionListenerButtons actionListenerButtons;
+    private ElevatorUI ui;
 
     public ButtonForSpeed(int x, int y, int width, int height, String text, ElevatorUI ui, ActionListenerButtons actionListenerButtons) {
         this.ui = ui;

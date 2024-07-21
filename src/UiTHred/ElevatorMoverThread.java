@@ -5,9 +5,12 @@ import ElementsClass.ToggleSwitch;
 import javax.swing.*;
 import java.awt.*;
 import java.util.Map;
+import sounds.ElevatorSound;
 import sounds.*;
+import Interface.ThreadElevator;
 
-public class ElevatorMoverThread extends Thread {
+
+public class ElevatorMoverThread extends Thread implements ThreadElevator{
     private ElevatorUI elevatorUI;
     private int targetFloor, speedForElevator;
     private int[] floorPositions;
@@ -60,17 +63,17 @@ public class ElevatorMoverThread extends Thread {
         arrowPanelDown.setArrowColor(new Color(237, 235, 235));
     }
 
-    private void updateFloorButtons() {
+    public void updateFloorButtons() {
         for (int i = 1; i <= 5; i++) {
             if (elevatorUI.getLiveFloorInt() == i) {
                 floorButtons.get(i).setBorder(null);
                 floorOnButtons.get(i).setForeground(Color.BLUE);
-                elevatorSound.playSound("src/sounds/floor" + i + ".wav");
+                elevatorSound.playSound("sounds/floor" + i + ".wav");
             }
         }
     }
 
-    private void moveToFirstFloor() {
+    public void moveToFirstFloor() {
         while (elevatorUI.getLiveFloorInt() > 1) {
             elevatorUI.setLiveFloorInt(elevatorUI.getLiveFloorInt() - 1);
             updateFloorButtons();
@@ -83,6 +86,6 @@ public class ElevatorMoverThread extends Thread {
                 e.printStackTrace();
             }
         }
-        elevatorSound.playSound("src/sounds/floor1.wav");
+        elevatorSound.playSound("/sounds/floor1.wav");
     }
 }
