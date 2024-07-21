@@ -2,10 +2,10 @@ package createrClassButtons;
 
 import javax.swing.*;
 import java.awt.*;
-
+import Interface.GetButtonForCreater;
 import UiTHred.ElevatorUI;
 
-public class ButtonForSpeed extends JButton {
+public class ButtonForSpeed extends JButton implements GetButtonForCreater{
     private JButton button;
     private ActionListenerButtons actionListenerButtons;
     private ElevatorUI ui;

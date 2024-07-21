@@ -2,8 +2,9 @@ package createrClassButtons;
 import UiTHred.ElevatorUI;
 import javax.swing.*;
 import java.awt.*;
+import Interface.GetButtonForCreater;
 
-public class MakeButtonOnFloor extends JButton {
+public class MakeButtonOnFloor extends JButton implements GetButtonForCreater{
     private JButton button;
     private ElevatorUI ui;
     private ActionListenerButtons actionListenerButtons;
